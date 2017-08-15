@@ -57,7 +57,7 @@ var template = `<html>
     <div class="container">
     <div>
         <h1> ${heading}</h1>
-        <a href=${link1}>Home</a>
+        <a href=${link1}>Previous</a>
         <a href = ${link2}>Next</a>
     </div>
     ${content}

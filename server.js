@@ -16,7 +16,7 @@ var articles = {
     </div>
     <div>Aug 8,2017</div>`
 }
-var dispaly = function(obj){
+var display = function(obj){
     var $title = obj.title;
     var $heading = obj.heading;
     var $link1 = obj.link1;

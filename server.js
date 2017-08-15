@@ -17,15 +17,15 @@ var articles = {
     <div>Aug 8,2017</div>`
 }
 var display = function(obj){
-    var $title = obj.title;
-    var $heading = obj.heading;
-    var $link1 = obj.link1;
-    var $link2 = obj.link2;
-    var $content = obj.content;
+    var title = obj.title;
+    var heading = obj.heading;
+    var link1 = obj.link1;
+    var link2 = obj.link2;
+    var content = obj.content;
 var template = `<html>
     <head>
         <title>
-            $title
+            ${title}
         </title>
         <meta name = "viewport" content = "width-divice-width , initial-scale=1"/>
         <link href="ui/style.css" rel = "stylesheet"/>
@@ -33,11 +33,11 @@ var template = `<html>
 <body>
     <div class="container">
     <div>
-        <h1> $heading</h1>
-        <a href=$link1>Home</a>
-        <a href = $link2>Next</a>
+        <h1> ${heading}</h1>
+        <a href=${link1}>Home</a>
+        <a href = ${link2}>Next</a>
     </div>
-    $content
+    ${content}
     </div>
 </body>
 </html>`

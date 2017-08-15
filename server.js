@@ -5,7 +5,35 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-
+var artiles = {
+    title: "article_one",
+    heading:"First Article",
+    link1 :"/",
+    link2:"/article_two",
+    content : `
+    <div>
+        <p>welcome to imad..you are going to experience the coding world</p>
+    </div>
+    <div>Aug 8,2017</div></div>`
+}
+var template = `<html>
+    <head>
+        <title>
+            $title
+        </title>
+        <meta name = "viewport" content = "width-divice-width , initial-scale=1"/>
+        <link href="ui/style.css" rel = "stylesheet"/>
+    </head>
+<body>
+    <div class="container">
+    <div>
+        <h1> $heading</h1>
+        <a href=$link1>Home</a>
+        <a href = $link2>Next</a>
+    </div>
+    $content
+</body>
+</html>`
 
 
 app.get('/', function (req, res) {

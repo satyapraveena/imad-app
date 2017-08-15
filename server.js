@@ -5,7 +5,7 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var artiles = {
+var articles = {
     title: "article_one",
     heading:"First Article",
     link1 :"/",
@@ -14,8 +14,14 @@ var artiles = {
     <div>
         <p>welcome to imad..you are going to experience the coding world</p>
     </div>
-    <div>Aug 8,2017</div></div>`
+    <div>Aug 8,2017</div>`
 }
+var dispaly = function(obj){
+    var $title = obj.title;
+    var $heading = obj.heading;
+    var $link1 = obj.link1;
+    var $link2 = obj.link2;
+    var $content = obj.content;
 var template = `<html>
     <head>
         <title>
@@ -32,10 +38,11 @@ var template = `<html>
         <a href = $link2>Next</a>
     </div>
     $content
+    </div>
 </body>
 </html>`
-
-
+return template;
+};
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
@@ -52,7 +59,7 @@ app.get('/ui/madi.png', function (req, res) {
 //});
 app.get('/article_one',function(req,res)
 {
-  res.sendFile(path.join(__dirname,'ui','article_one.html'));
+ res.send(display(articles));
 });
 app.get('/article_two',function(req,res)
 {
